@@ -10,36 +10,36 @@ Pod::Spec.new do |s|
   s.platform = :ios, '10.0'
   s.frameworks = 'StoreKit'
   s.requires_arc = true
-  s.default_subspec = 'Core'
 
-  s.subspec 'Core' do |core|
+  s.subspec 'RMStore' do |core|
     core.source_files = 'RMStore/*.{h,m}'
+    core.dependency 'OpenSSL-Universal'
   end
 
-  s.subspec 'KeychainPersistence' do |kp|
-    kp.dependency 'RMStore/Core'
-    kp.platform = :ios, '10.0'
-    kp.source_files = 'RMStore/Optional/RMStoreKeychainPersistence.{h,m}'
-    kp.frameworks = 'Security'
-  end
+  # s.subspec 'KeychainPersistence' do |kp|
+  #   kp.dependency 'RMStore/Core'
+  #   kp.platform = :ios, '10.0'
+  #   kp.source_files = 'RMStore/Optional/RMStoreKeychainPersistence.{h,m}'
+  #   kp.frameworks = 'Security'
+  # end
 
-  s.subspec 'NSUserDefaultsPersistence' do |nsudp|
-    nsudp.dependency 'RMStore/Core'
-    nsudp.platform = :ios, '10.0'
-    nsudp.source_files = 'RMStore/Optional/RMStoreUserDefaultsPersistence.{h,m}', 'RMStore/Optional/RMStoreTransaction.{h,m}'
-  end
+  # s.subspec 'NSUserDefaultsPersistence' do |nsudp|
+  #   nsudp.dependency 'RMStore/Core'
+  #   nsudp.platform = :ios, '10.0'
+  #   nsudp.source_files = 'RMStore/Optional/RMStoreUserDefaultsPersistence.{h,m}', 'RMStore/Optional/RMStoreTransaction.{h,m}'
+  # end
 
-  s.subspec 'AppReceiptVerifier' do |arv|
-    arv.dependency 'RMStore/Core'
-    arv.platform = :ios, '10.0'
-    arv.source_files = 'RMStore/Optional/RMStoreAppReceiptVerifier.{h,m}', 'RMStore/Optional/RMAppReceipt.{h,m}'
-    arv.dependency 'OpenSSL-Universal'
-  end
+  # s.subspec 'AppReceiptVerifier' do |arv|
+  #   arv.dependency 'RMStore/Core'
+  #   arv.platform = :ios, '10.0'
+  #   arv.source_files = 'RMStore/Optional/RMStoreAppReceiptVerifier.{h,m}', 'RMStore/Optional/RMAppReceipt.{h,m}'
+  #   arv.dependency 'OpenSSL-Universal'
+  # end
 
-  s.subspec 'TransactionReceiptVerifier' do |trv|
-    trv.dependency 'RMStore/Core'
-    trv.platform = :ios, '10.0'
-    trv.source_files = 'RMStore/Optional/RMStoreTransactionReceiptVerifier.{h,m}'
-  end
+  # s.subspec 'TransactionReceiptVerifier' do |trv|
+  #   trv.dependency 'RMStore/Core'
+  #   trv.platform = :ios, '10.0'
+  #   trv.source_files = 'RMStore/Optional/RMStoreTransactionReceiptVerifier.{h,m}'
+  # end
 
 end
