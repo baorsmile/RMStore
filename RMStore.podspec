@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author = 'Hermes Pique'
   s.social_media_url = 'https://twitter.com/hpique'
   s.source = { :git => 'https://github.com/baorsmile/RMStore.git', :tag => "v#{s.version}" }
-  s.platform = :ios, '7.0'
+  s.platform = :ios, '10.0'
   s.frameworks = 'StoreKit'
   s.requires_arc = true
   s.default_subspec = 'Core'
@@ -29,7 +29,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'AppReceiptVerifier' do |arv|
     arv.dependency 'RMStore/Core'
-    arv.platform = :ios, '7.0'
+    arv.platform = :ios, '10.0'
     arv.source_files = 'RMStore/Optional/RMStoreAppReceiptVerifier.{h,m}', 'RMStore/Optional/RMAppReceipt.{h,m}'
     arv.dependency 'OpenSSL-Universal'
   end
